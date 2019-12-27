@@ -1,4 +1,4 @@
 <?php
-//testing for understanding...!
+//mainly on testing for understanding...!
 echo "for revert check";
 ?>
