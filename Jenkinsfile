@@ -13,7 +13,7 @@ pipeline {
             steps {
 		    script{
 	def check = "${currentBuild.currentResult}"
-		    if(check =='SUCCESS'){
+		    if(check =='FAILURE'){
 		
  mail bcc: '', body: 'This is a message from Jenkins ;The build is Success...!', cc: '', from: '', replyTo: '', subject: 'testing jenkins', to: 'sathishbabu.ganeshan@neshinc.com'
 		    }
@@ -21,7 +21,9 @@ pipeline {
 	    }
         }
 	    
-        
+        stage('TESTING') {
+	-echo "";
+	}
     }
 }
 
