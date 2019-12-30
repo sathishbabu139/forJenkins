@@ -10,10 +10,13 @@ pipeline {
 		}
 }
 	
-        stage('Build') {
+        stage('EmailNotification') {
             steps {
-                mail bcc: '', body: 'This is a message from Jenkins ;The build is Success...!', cc: '', from: '', replyTo: '', subject: 'testing jenkins', to: 'sathishbabu.ganeshan@neshinc.com'
-            }
+		    if(currentBuild.result == 'FAILURE')
+          {mail bcc: '', body: 'This is a message from Jenkins ;The build is Success...!', cc: '', from: '', replyTo: '', subject: 'testing jenkins', to: 'sathishbabu.ganeshan@neshinc.com'
+		    
+		    }
+		    }
         }
         
     }
