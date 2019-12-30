@@ -6,7 +6,7 @@ pipeline {
       	stage (‘SourceBuild’) {
 		steps {
         sh 'sudo cp -i /var/lib/jenkins/workspace/jenkinsEmailSend/*  /var/www/html/firstBuild'
-     echo "${env.BUILD_URL} has result success"
+     echo "${currentBuild.result} has result success"
 		}
 }
         stage('EmailNotification') {
