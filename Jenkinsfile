@@ -12,7 +12,7 @@ pipeline {
         stage('EmailNotification') {
             steps {
 		    script{
-	def check = "${currentBuild.currentResult}"
+	def check = "Fail"
 			    
 		    if(!check.equals("SUCCESS")){
 		
