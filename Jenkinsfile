@@ -12,7 +12,7 @@ pipeline {
 	
         stage('EmailNotification') {
             steps {
-          mail bcc: '', body: 'This is a message from Jenkins ;The build is Success...! from stage ${FAILED_STAGE}', cc: '', from: '', replyTo: '', subject: 'testing jenkins', to: 'sathishbabu.ganeshan@neshinc.com'
+          mail bcc: '', body: 'This is a message from Jenkins ;The build is Success...! from stage ${env.STAGE_NAME}', cc: '', from: '', replyTo: '', subject: 'testing jenkins', to: 'sathishbabu.ganeshan@neshinc.com'
 	  	      
 	    }
         }
