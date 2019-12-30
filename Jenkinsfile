@@ -5,7 +5,7 @@ pipeline {
 	
       	stage (‘SourceBuild’) {
 		steps {
-        sh 'sudo scp -i /var/lib/jenkins/workspace/jenkinsEmailSend/*  ubuntu@ip-172-31-35-212:/var/www/html/'
+        sh 'sudo cp -i /var/lib/jenkins/workspace/jenkinsEmailSend/*  /var/www/html/'
         echo "Jenkins build is working"	 
 		}
 }
