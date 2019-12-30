@@ -5,7 +5,7 @@ pipeline {
 	
       	stage (‘SourceBuild’) {
 		steps {
-        sh 'sud cp -i /var/lib/jenkins/workspace/jenkinsEmailSend/*  /var/www/html/firstBuild'
+        sh 'sudo cp -i /var/lib/jenkins/workspace/jenkinsEmailSend/*  /var/www/html/firstBuild'
      echo "${currentBuild.currentResult} has result success"
 		}
 }
