@@ -12,7 +12,7 @@ pipeline {
         stage('EmailNotification') {
             steps {
 		    script{
-	 $check = "SUCCESS"
+	 $check = "FAil"
 			    
 		    if($check != "SUCCESS"){
 		
