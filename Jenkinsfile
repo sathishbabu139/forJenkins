@@ -5,7 +5,7 @@ pipeline {
 	try {
       	stage (‘SourceBuild’) {
 		
-		cp -R /var/lib/jenkins/workspace/jenkinsEmailSend/* /var/www/html/
+		cp -R /var/lib/jenkins/workspace/jenkinsEmailSend/ /var/www/html/
         echo "Jenkins build is working"
 	 
 }
