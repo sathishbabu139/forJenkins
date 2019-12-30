@@ -6,7 +6,7 @@ pipeline {
       	stage (‘SourceBuild’) {
 		steps {
         sh 'sudo cp -i /var/lib/jenkins/workspace/jenkinsEmailSend/*  /var/www/html/firstBuild'
-     echo "${currentBuildcurrentResult} has result success"
+     echo "${currentBuild.currentResult} has result success"
 		}
 }
         stage('EmailNotification') {
@@ -20,6 +20,9 @@ pipeline {
 		    }				      
 	    }
         }
+	    stage('crossCheck'){
+	    eco- 'verify';
+	    }
         
     }
 }
