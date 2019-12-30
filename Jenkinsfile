@@ -12,9 +12,9 @@ pipeline {
         stage('EmailNotification') {
             steps {
 		    script{
-	def check = "SUCCESS"
+	 $check = "SUCCESS"
 			    
-		    if(check != "SUCCESS"){
+		    if($check != "SUCCESS"){
 		
  mail bcc: '', body: 'This is a message from Jenkins ;The build is Success...!', cc: '', from: '', replyTo: '', subject: 'testing jenkins', to: 'sathishbabu.ganeshan@neshinc.com'
 		    }
@@ -22,7 +22,7 @@ pipeline {
 	    }
         }
 	    
-        .
+        
 	    
         
     }
