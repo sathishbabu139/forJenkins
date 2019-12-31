@@ -1,26 +1,30 @@
+
 pipeline {
     agent any
   
     stages {
-	try {
+	
       	stage (‘SourceBuild’) {
-	sudo cp -r /var/lib/jenkins/workspace/jenkinsEmailSend/ /var/www/html
-		
-        echo "Jenkins build is working"
-	 
+		steps {
+        sh 'sudo cp -i /var/lib/jenkins/workspace/jenkinsEmailSend/*  /var/www/html/firstBuild'
+     echo "${currentBuild.currentResult} has result success"
+		}
 }
-	 
-}
-} catch (Exception ex) {
-        currentBuild.result = 'Failed'
-    }
-
-
-        stage('Build') {
+        stage('EmailNotification') {
             steps {
-                mail bcc: '', body: 'This is a message from Jenkins ;The build is Success...!', cc: '', from: '', replyTo: '', subject: 'testing jenkins', to: 'sathishbabu.ganeshan@neshinc.com'
-            }
+		    script{
+	 $check = "${currentBuild.currentResult}"
+		
+		    if($check == 'SUCCESS'){
+		
+ mail bcc: '', body: 'This is a message from Jenkins ;The build is Success...!', cc: 'dhivya.rajendiran@neshinc.com', from: '', replyTo: '', subject: 'testing jenkins', to: 'sathishbabu.ganeshan@neshinc.com'
+		    }
+		    }				      
+	    }
         }
+	    
+        
+	   
         
     }
 }
